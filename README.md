@@ -1,0 +1,1 @@
+A MERN stack booking app which allows users to seach for hotels, select dates and reserve rooms in hotels. User authentaication and security implemented using JWT token. Registered users have the option to list their properties on the website as well.
