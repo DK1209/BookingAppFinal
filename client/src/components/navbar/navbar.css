@@ -25,3 +25,30 @@
   cursor: pointer;
   color: #003580;
 }
+.desktopText {
+  display: block; /* Show by default */
+}
+
+.mobileText {
+  display: none; /* Hide by default */
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .desktopText {
+    display: none; /* Hide on small screens */
+  }
+  .navButton {
+    margin-left: 10px; /* Reduce left margin for small screens */
+  }
+  .logo{
+    margin-left:10px;
+  }
+  .navButton{
+    margin-right:10px;
+  }
+
+  .mobileText {
+    display: block; /* Show on small screens */
+  }
+}

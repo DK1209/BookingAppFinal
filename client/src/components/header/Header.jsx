@@ -62,25 +62,25 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span className="s">Stays</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
+            <span className="s">Flights</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
+            <span className="s">Car rentals</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
+            <span className="s">Attractions</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
+            <span className="s">Airport taxis</span>
           </div>
         </div>
         {type !== "list" && (
@@ -100,7 +100,7 @@ const Header = ({ type }) => {
                   type="text"
                   placeholder="Where are you going?"
                   className="headerSearchInput"
-                  onChange={(e) => setDestination(e.target.value
+                  onChange={(e) => setDestination(e.target.value.toLowerCase()
                   )}
                 />
               </div>

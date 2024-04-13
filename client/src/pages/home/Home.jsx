@@ -6,24 +6,26 @@ import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
 import useFetch from "../../hooks/useFetch";
+import { useMediaQuery } from '@react-hook/media-query';
 import "./home.css";
 
 const Home = () => {
   let { data, loading, error } = useFetch("/hotels");
+  const isSmall=useMediaQuery("(max-width:769px)");
   data=data.slice(0,4);
   return (
     <div>
       <Navbar />
       <Header/>
       <div className="homeContainer">
-        <Featured/>
+        {!isSmall && <Featured/>}
         <h2 className="homeTitle">Browse by property type</h2>
         <PropertyList/>
         {
           data.length>=2 &&
         <h2 className="homeTitle">Homes guests love</h2>
         }
-        <FeaturedProperties/>
+        {!isSmall && <FeaturedProperties />} 
         <MailList/>
         <Footer/>
       </div>

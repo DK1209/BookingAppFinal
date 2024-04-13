@@ -6,6 +6,12 @@
   gap: 20px;
 }
 
+@media screen and (max-width:768px) {
+  .fp{
+    flex-direction:column;
+}
+}
+
 .fpItem{
   flex: 1;
   gap: 10px;

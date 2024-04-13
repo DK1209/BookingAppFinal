@@ -5,11 +5,17 @@
   margin-top: 20px;
 }
 
+.hotelPriceHighlight{
+  text-align: center;
+}
+
 .hotelWrapper {
   width: 100%;
   max-width: 1024px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   position: relative;
 }
@@ -66,9 +72,11 @@
 
 .hotelDetails {
   display: flex;
-  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .hotelDetailsTexts {
@@ -81,12 +89,16 @@
 }
 
 .hotelDetailsPrice {
-  flex: 1;
   background-color: #ebf3ff;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center; /* Center items horizontally */
+  justify-content: center;
+  text-align: center; /* Center text horizontally */
+  max-width: 90%; /* Limit width for smaller screens */
+  margin:auto;
 }
 
 .hotelDetailsPrice > h1 {

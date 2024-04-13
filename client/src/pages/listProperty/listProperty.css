@@ -1,30 +1,50 @@
-.one{
-    background-image: linear-gradient(to bottom, #003580 90%, transparent 10%);
-}  
+.unique {
+  margin-top: 20px; /* Adjust margin to create space between the top of the container and the h1 */
+  margin-bottom: 20px; /* Add margin to create space below the h1 */
+}
 
-h1{
-    margin-bottom: 50px;
-    color:white;
+.lContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.lButton{
-    width:25%;
+
+.yes {
+  background-image: linear-gradient(to bottom, #003580 90%, transparent 10%);
+}
+  
+  .lButton {
+    width: 25%;
     border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.lContainer{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-}
-p{
+    padding: 10px 20px;
+    background-color: #0071c2;
     color: white;
-}
-.lInput{
-    margin-right:10px;
-}
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  p {
+    color: white;
+  }
+  
+   @media screen and (max-width: 376px) {
+    .h1{
+      font-size: medium;
+    }
+    .lInput {
+      margin-right: 0; 
+      margin-bottom: 10px; 
+    }
+    .yes{
+      background-image: linear-gradient(to bottom, #003580 100%, transparent 0%);
+    }
+  
+    .lButton {
+      width: 50%;
+    }
+    .unique{
+      margin-top:250px;
+    }
+  } 

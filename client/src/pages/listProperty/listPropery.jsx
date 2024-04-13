@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./listProperty.css";
 
 const ListProperty = () => {
-    const { user } = useContext(AuthContext);
-    const [credentials, setCredentials] = useState({
+    const { user,userId } = useContext(AuthContext);
+  //   const location = useLocation();
+  // const userId = new URLSearchParams(location.search).get("userId");
+   const [credentials, setCredentials] = useState({
         name:undefined,
         type:undefined,
         city:undefined,
@@ -15,21 +17,29 @@ const ListProperty = () => {
         title:undefined,
         desc:undefined,
         cheapestPrice:undefined
-    });
+    }); 
 
     const { loading, error, dispatch } = useContext(AuthContext);
   
     const navigate = useNavigate()
   
     const handleChange = (e) => {
+      const { id, value } = e.target;
+      if (id==="city"){
+        const lower_val=value.toLowerCase();
+        setCredentials((prev) => ({ ...prev, [e.target.id]: lower_val }));  
+      }
+      else{
       setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+      }
     };
   
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("/hotels/", credentials);
-        navigate("/")
+        const res = await axios.post(`/hotels/${userId}`, credentials);
+        const hotelId = res.data._id; // Assuming the hotel ID is returned from the server
+        navigate(`/addRooms?hotelId=${hotelId}`);
       } catch (err) {
         console.log(err);
       }
@@ -38,9 +48,9 @@ const ListProperty = () => {
     if (!user) navigate("/Login");
   
     return (
-          <div className="login one">
+          <div className="login yes">
             <div className="lContainer">
-            <h1>List any property on Booking.com</h1>
+            <h1 className="unique">List any property on Booking.com</h1>
             <p>Property details:</p>
               <div className="flex box">
                 <input
@@ -135,7 +145,7 @@ const ListProperty = () => {
           />
           </div>
           <button disabled={loading} onClick={handleClick} className="lButton">
-            Submit
+            Add rooms
           </button>
           {error && <span>{error.message}</span>}
         </div>

@@ -31,7 +31,14 @@ const Navbar = () => {
         </Link>
         {user ? (
   <div className="navItems">
-  <button className="navButton" onClick={() => navigate("/listProperty")}>List your property</button>
+  <button className="navButton" onClick={() => navigate(`/listProperty`)}>
+  <span className="desktopText">List your property</span>
+  <span className="mobileText">List</span>
+  </button>
+  <button className="navButton" onClick={() => navigate(`/deList`)}>
+  <span className="desktopText">Delist your property</span>
+  <span className="mobileText">Delist</span>
+  </button>
     <button className="navButton" onClick={handleLogout}>Logout</button>
   </div>
 ) : (

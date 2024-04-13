@@ -18,6 +18,12 @@
   height: 150px;
   object-fit: cover;
 }
+@media screen and (max-width:768px) {
+  .pList{
+  flex-direction: column;
+  width:80%;
+}
+}
 
 .pListTitles>h1{
   font-size: 18px;

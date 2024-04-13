@@ -20,6 +20,7 @@
   display: flex;
   gap: 40px;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .headerListItem {
@@ -32,6 +33,27 @@
   border: 1px solid white;
   padding: 10px;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .headerList {
+    gap:20px;
+    align-items: center;
+  justify-content: center;
+  }
+  .headerDesc{
+    text-align: center;
+  }
+  .headerTitle{
+    text-align: center;
+  }
+
+  .mobileText {
+    display: block; /* Show on small screens */
+  }
+  .s{
+    font-size: small;
+  }
 }
 
 .headerDesc {
@@ -48,25 +70,61 @@
 }
 
 .headerSearch {
-  height: 30px;
+  height: auto;
   background-color: white;
   border: 3px solid #febb02;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: space-around;
   padding: 10px 0px;
   border-radius: 5px;
-  position: absolute;
-  bottom: -25px;
-  width: 100%;
+  width: 90%;
   max-width: 1024px;
+  margin: auto; /* Center horizontally */
+  margin-top: 40px;
+  position: relative; /* Ensure relative positioning */
 }
+
+@media screen and (max-width: 768px) {
+  .headerSearch {
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+  }
+
+  .headerBtn {
+    width: 90%; /* Adjust button width for mobile */
+    margin: 20px; /* Add margin to separate from search */
+  }
+
+
+  .headerSearchItem {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .headerSearchItem {
+    position: relative; /* Ensure relative positioning */
+  }
+
+  .headerSearchText {
+    z-index: 1; /* Ensure the span appears above other elements */
+  }
+
+  .date {
+    position: absolute;
+    top: 100%; /* Position the calendar below the span */
+    left: 0;
+    z-index: 2; /* Ensure the calendar appears above other elements */
+  }
+}
+
 
 .headerIcon {
   color: lightgray;
 }
 
 .headerSearchItem {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -84,14 +142,16 @@
 
 .date {
   position: absolute;
-  top: 50px;
-  z-index: 2;
+  top: calc(100% + 5px); /* Position below the input */
+  left: 0;
+  z-index: 2; /* Ensure the calendar appears above other elements */
 }
 
 .options {
   z-index: 2;
   position: absolute;
-  top: 50px;
+  top: calc(100% + 5px); /* Position below the input */
+  left: 0;
   background-color: white;
   color: gray;
   border-radius: 5px;
