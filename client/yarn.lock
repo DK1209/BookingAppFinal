@@ -2726,6 +2726,19 @@ bonjour-service@^1.0.11:
     fast-deep-equal "^3.1.3"
     multicast-dns "^7.2.4"
 
+"bookingapp@file:..":
+  version "1.0.0"
+  resolved "file:.."
+  dependencies:
+    bcryptjs "^2.4.3"
+    cookie-parser "^1.4.6"
+    cors "^2.8.5"
+    dotenv "^16.0.0"
+    express "^4.18.1"
+    jsonwebtoken "^8.5.1"
+    mongoose "^6.3.1"
+    nodemon "^2.0.16"
+
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"

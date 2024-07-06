@@ -28,9 +28,9 @@ const DeList = () => {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        const response=await axios.get("/hotels/id", {params:{ name: credentials.name, address:credentials.address }});
+        const response=await axios.get("/api/hotels/id", {params:{ name: credentials.name, address:credentials.address }});
         if (response.data.hotelId){
-        const res = await axios.delete(`/hotels/${response.data.hotelId}/${userId}`, {data:credentials});
+        const res = await axios.delete(`/api/hotels/${response.data.hotelId}/${userId}`, {data:credentials});
         navigate("/");
         } else console.log("hotel id is null");
       } catch (err) {

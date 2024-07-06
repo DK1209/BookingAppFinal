@@ -12,7 +12,7 @@ const Navbar = () => {
     e.preventDefault();
     try {
       // Call the logout API endpoint to clear the access token
-      await axios.post("/auth/logout");
+      await axios.post("/api/auth/logout");
       localStorage.removeItem('user');
       localStorage.removeItem('token');
       // Optionally, perform any additional cleanup or state updates

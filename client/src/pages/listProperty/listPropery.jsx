@@ -37,11 +37,11 @@ const ListProperty = () => {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post(`/hotels/${userId}`, credentials);
+        const res = await axios.post(`/api/hotels/${userId}`, credentials);
         const hotelId = res.data._id; // Assuming the hotel ID is returned from the server
         navigate(`/addRooms?hotelId=${hotelId}`);
       } catch (err) {
-        console.log(err);
+        console.log(err.response.data);
       }
     };
 

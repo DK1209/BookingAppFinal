@@ -22,9 +22,9 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
-      console.log(res.data.details);
-      console.log(res.data.details._id);
+      const res = await axios.post("/api/auth/login", credentials);
+      // console.log(res.data.details);
+      // console.log(res.data.details._id);
       if (res.data.details && res.data.details._id) { // Check if user details and user ID exist
         dispatch({ 
           type: "LOGIN_SUCCESS", 

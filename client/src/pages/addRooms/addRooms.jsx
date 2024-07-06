@@ -41,7 +41,7 @@ const AddRooms = () => {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post(`/rooms/${hotelId}`, credentials);
+        const res = await axios.post(`/api/rooms/${hotelId}`, credentials);
         navigate("/")
       } catch (err) {
         console.log(err);

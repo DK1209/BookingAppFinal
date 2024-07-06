@@ -25,10 +25,10 @@ const SignIn = () => {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("/users/", credentials);
+        const res = await axios.post("/api/users/", credentials);
         navigate("/")
       } catch (err) {
-        console.log(err);
+        console.log(err.response.data);
       }
     };
 

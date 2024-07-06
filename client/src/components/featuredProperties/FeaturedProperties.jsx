@@ -2,7 +2,7 @@ import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
-  let { data, loading, error } = useFetch("/hotels");
+  let { data, loading, error } = useFetch("/api/hotels");
   const images = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUc6jmFYFGYfzKyod14Ar_5gVCtfRKIGDOvUTJjSRRWw&s",
     "https://www.savills.co.uk/_images/adobestock-539646437.jpg",
@@ -17,7 +17,7 @@ const FeaturedProperties = () => {
         "Loading"
       ) : (
         <>
-          { data.length>=2 &&
+          { Array.isArray(data) && data.length>=2 &&
             data.map((item, index) => (
             <div className="fpItem" key={item._id}>
               <img

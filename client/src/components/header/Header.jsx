@@ -50,6 +50,7 @@ const Header = ({ type }) => {
   const { dispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
+    console.log("Dispatching search with:", { destination, dates, options });
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
   };
@@ -98,7 +99,7 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
                   type="text"
-                  placeholder="Where are you going?"
+                  placeholder="Search by city"
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value.toLowerCase()
                   )}

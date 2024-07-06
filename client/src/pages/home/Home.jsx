@@ -10,7 +10,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import "./home.css";
 
 const Home = () => {
-  let { data, loading, error } = useFetch("/hotels");
+  let { data, loading, error } = useFetch("/api/hotels");
   const isSmall=useMediaQuery("(max-width:769px)");
   data=data.slice(0,4);
   return (
